@@ -1,0 +1,44 @@
+name: Fetch dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Download samloader-rs
+      shell: bash
+      run: |
+        curl -L https://github.com/topjohnwu/samloader-rs/releases/download/2.0.0/samloader-v2.0.0-linux-x86_64.tar.xz -O samloader.tar.xz
+        tar -xf samloader.tar.xz
+        rm samloader.tar.xz
+    - name: Install System Dependencies via APT
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+        ripgrep \
+        openjdk-17-jre-headless \
+        tar \
+        lz4 \
+        xmlstarlet \
+        jq \
+        aapt \
+        aapt2 \
+        android-sdk-libsparse-utils \
+        erofs-utils
+
+    - name: Install Only Missing Tools (lpunpack)
+      shell: bash
+      run: |
+        git clone https://github.com/Exynos-nigg/lpunpack-lpmake-mirror.git lpbinary
+        cd lpbinary
+        bash install.sh
+        cd ../ && rm -rf lpbinary
+
+    - name: Chmod scripts
+      shell: bash
+      run: |
+        chmod +x *.sh
+
+    - name: Check dependencies
+      shell: bash
+      run: |
+        ./check_deps.sh
