@@ -34,7 +34,7 @@ runs:
     - name: Chmod scripts
       shell: bash
       run: |
-        chmod +x *.sh
+        chmod +x *.sh || echo "No scripts found"
 
     - name: Download the Firmware
       shell: bash
