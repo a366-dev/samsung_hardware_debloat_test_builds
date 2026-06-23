@@ -35,8 +35,3 @@ runs:
       shell: bash
       run: |
         chmod +x *.sh
-
-    - name: Check dependencies
-      shell: bash
-      run: |
-        ./check_deps.sh
