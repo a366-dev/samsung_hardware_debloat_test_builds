@@ -4,6 +4,10 @@ permissions:
   contents: write
   actions: write
 
+on:
+  workflow_dispatch:
+    inputs:
+
 jobs:
   build:
     name: "Build the firmware"
