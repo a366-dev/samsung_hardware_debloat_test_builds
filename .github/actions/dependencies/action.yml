@@ -16,12 +16,10 @@ runs:
         sudo apt-get install -y \
         ripgrep \
         openjdk-17-jre-headless \
-        tar \
         lz4 \
         xmlstarlet \
         jq \
-        aapt \
-        aapt2 \
+        google-android-build-tools-34.0.0-installer \
         android-sdk-libsparse-utils \
         erofs-utils
 
