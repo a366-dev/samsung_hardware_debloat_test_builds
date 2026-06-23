@@ -46,3 +46,8 @@ runs:
       run: |
         unzip firmware.zip -d firmware
         rm firmware.zip
+
+    - name: DELETEME
+      shell: bash
+      run: |
+        ls firmware
