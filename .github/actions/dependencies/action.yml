@@ -6,7 +6,7 @@ runs:
     - name: Download samloader-rs
       shell: bash
       run: |
-        curl -L https://github.com/topjohnwu/samloader-rs/releases/download/2.0.0/samloader-v2.0.0-linux-x86_64.tar.xz -O samloader.tar.xz
+        curl -L https://github.com/topjohnwu/samloader-rs/releases/download/2.0.0/samloader-v2.0.0-linux-x86_64.tar.xz -o samloader.tar.xz
         tar -xf samloader.tar.xz
         rm samloader.tar.xz
     - name: Install System Dependencies via APT
