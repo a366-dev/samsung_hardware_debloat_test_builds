@@ -123,7 +123,7 @@ while true; do
     kill -0 "$$" || exit
 done &> /dev/null &
 
-REQUIRED_COMMANDS=('rg' 'java' 'tar' 'lz4' 'simg2img' 'img2simg' 'lpunpack' 'lpdump' 'fsck.erofs' 'xmlstarlet' 'aapt' 'aapt2' 'find' 'jq' 'attr')
+REQUIRED_COMMANDS=('rg' 'java' 'tar' 'lz4' 'simg2img' 'img2simg' 'lpunpack' 'lpmake' 'lpdump' 'fsck.erofs' 'xmlstarlet' 'aapt' 'aapt2' 'find' 'jq' 'attr')
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
     if ! command -v "${cmd}" &> /dev/null; then
