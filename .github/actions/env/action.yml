@@ -1,0 +1,10 @@
+name: ENV
+
+runs:
+  using: composite
+  steps:
+    - name: ENV
+      shell: bash
+      run: |
+        ROOT="$GITHUB_WORKSPACE"
+        echo "ROOT=$ROOT" >> $GITHUB_ENV

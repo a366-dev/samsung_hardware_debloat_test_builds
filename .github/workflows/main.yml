@@ -39,6 +39,9 @@ jobs:
           swap-size-gb: 25          # 10-24 GB is common for heavy LTO
         # swap-space-path: /mnt/swapfile   # optional
 
+      - name: Setup env
+        uses: ./.github/actions/env
+
       - name: Setup dependencies
         uses: ./.github/actions/dependencies
 
