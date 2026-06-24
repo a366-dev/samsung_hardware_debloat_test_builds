@@ -34,7 +34,7 @@ runs:
     - name: Chmod scripts
       shell: bash
       run: |
-        chmod +x *.sh || echo "No scripts found"
+        chmod +x debloat_system/*.sh || echo "No scripts found"
 
     - name: Download the Firmware
       shell: bash

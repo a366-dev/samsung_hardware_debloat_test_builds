@@ -41,3 +41,22 @@ jobs:
 
       - name: Setup dependencies
         uses: ./.github/actions/dependencies
+
+      - name: Build
+        uses: ./.github/actions/build
+
+      - name: Upload the super.img
+        id: upload_img
+        uses: actions/upload-artifact@v7
+        with:
+          path: ${{ env.ROOT }}/debloater_output/super.img
+          archive: false
+          if-no-files-found: error
+
+      - name: Upload the prism.img
+        id: upload_img
+        uses: actions/upload-artifact@v7
+        with:
+          path: ${{ env.ROOT }}/debloater_output/prism.img
+          archive: false
+          if-no-files-found: error

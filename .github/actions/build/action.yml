@@ -1,0 +1,9 @@
+name: Build the Firmware
+
+runs:
+  using: composite
+  steps:
+    - name: Build the Firmware
+      shell: bash
+      run: |
+        sudo ./debloat_system/clean_super.sh -m SM-A366E -s 36 -l E firmware 

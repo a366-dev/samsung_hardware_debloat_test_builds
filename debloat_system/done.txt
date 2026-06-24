@@ -1,0 +1,55 @@
+A366EXXU4BYI7:
+    [*] Super image size: 9.9 GB -> 5.8 GB (-4.1 GB!)
+    [*] OneUI 8
+    [*] Android Version: 16
+    [*] Bootloader Bit: 4
+
+[+] Debloated
+[+] Degoogled
+
+Build summary:
+    [*] Was:     374
+    [*] Removed: 232
+    [*] Kept:    142
+    [*] Added:    14
+    
+
+Pre-installed applications:
+    [priv-app]:
+        [*] microG                     [GitHub]
+        [*] FakeStore                  [GitHub]
+        [*] FlorisBoard                [GitHub]
+    [app] (deletable):
+        [*] KernelSU-Next (Spoofed)    [GitHub]
+        [*] LibreTube                  [GitHub]
+        [*] PVOT-OSS/Messages          [GitHub]
+        [*] F-Droid                    [F-Droid]
+        [*] Fennec                     [F-Droid]
+        [*] Aurora Store               [F-Droid]
+        [*] Voice Recorder             [Samsung Store]
+        [*] My Files                   [Samsung Store]
+        [*] Clock                      [Samsung Store]
+        [*] Calendar                   [Samsung Store]
+        [*] Calculator                 [Samsung Store]
+
+Installation:
+    [*] Reboot into Bootloader
+    [*] Flash fastboot.img through Heimdall by
+            heimdall flash --VENDOR_BOOT_A path/to/fastboot.img
+    [*] Reboot into Recovery
+    [*] Select "Enter fastboot"
+    [*] Flash super.img through Fastboot by
+            fastboot flash super super.img
+    [*] Flash prism.img through Fastboot by
+            fastboot flash prism_a prism.img
+        This step is only neccessary for the SER region (otherwise you will get some pre-installed shit like RuStore/Yandex)
+    [*] Select "Enter recovery"
+    [*] Wipe data/factory reset --> Factory data reset
+    [*] Reboot into Bootloader
+    [*] Flash vendor_boot.img through Heimdall by
+            heimdall flash --VENDOR_BOOT_A path/to/vendor_boot.img
+        ----------------------------------------------------------------------
+        | CRITICAL CAUTION: YOU MUST DO THIS STEP TO RETURN THE STOCK IMAGE! |
+        |                OTHERWISE YOU WILL GET INTO A BOOTLOOP              |
+        ----------------------------------------------------------------------
+    [*] Reboot into System. Activate the keyboard in settings. You are done.
