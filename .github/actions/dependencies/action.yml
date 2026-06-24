@@ -24,13 +24,16 @@ runs:
         android-sdk-libsparse-utils \
         erofs-utils
 
-    - name: Install Only Missing Tools (lpunpack)
+    - name: Install Only Missing Tools (android-partition-toolkit)
       shell: bash
       run: |
         git clone https://github.com/Exynos-nigg/lpunpack-lpmake-mirror.git lpbinary
         cd lpbinary
         bash install.sh
         cd ../ && rm -rf lpbinary
+        curl -L https://master.dl.sourceforge.net/project/a03-files/Tools/lpdump -o lpdump
+        chmod +x lpdump
+        sudo mv lpdump /bin/
 
     - name: Chmod scripts
       shell: bash
